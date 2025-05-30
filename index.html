@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menuju Kelulusan - SDN JOHAR BARU 04</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Logo Sekolah" class="logo" />
+        <h1>Menuju Kelulusan</h1>
+        <h2>SDN JOHAR BARU 04</h2>
+        <p><strong>PENGUMUMAN KELULUSAN SISWA KELAS VI TAHUN PELAJARAN 2024/2025:</strong> <br><span id="countdown"></span></p>
+
+        <div class="box">
+            <img src="kepala-sekolah.png" alt="Kepala Sekolah" class="foto-kepala" />
+            <h3>Sambutan Ibu Kepala Sekolah</h3>
+            <p>Anak-anak hebatku, masa depan kalian dimulai dari sini. Nikmati setiap momen penantian ini dengan doa dan semangat. Apapun hasilnya nanti, kalian sudah luar biasa! 🌟</p>
+            <p><strong>– Ibu Siti Hida Farhatun, M.Pd</strong></p>
+        </div>
+    </div>
+
+    <audio autoplay loop>
+        <source src="graduation-background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const countdown = () => {
+            const targetDate = new Date("2025-06-02T08:00:00").getTime();
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = `${days} hari ${hours} jam ${minutes} menit ${seconds} detik lagi`;
+        };
+        setInterval(countdown, 1000);
+    </script>
+</body>
+</html>
